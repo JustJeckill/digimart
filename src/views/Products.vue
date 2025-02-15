@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts">
   export default {
     data() {
       return {
@@ -44,12 +44,35 @@
           }
         ]
       }
+    },
+    methods: {
+      addProduct() {
+        console.log('add product');
+      }
     }
   }
 </script>
 
 <template>
+  <form>
+    <input type="text" placeholder="Product Title">
+    <input type="text" placeholder="Product description">
+    <input type="text" placeholder="Product price">
+    <button type="button" @click="addProduct">Add product</button>
+  </form>
 
+
+  <div class="products">
+    <div class="product"
+         v-for="product in products"
+         :key ="product.id"
+    >
+      <h3 class="product__title">{{ product.title }}</h3>
+      <p class="product__description">{{ product.description }}</p>
+      <p class="product__rating">{{ product.rating }}</p>
+      <p class="product__price">{{ product.price }}</p>
+    </div>
+  </div>
 </template>
 
 <style scoped>

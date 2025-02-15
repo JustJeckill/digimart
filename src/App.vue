@@ -1,6 +1,9 @@
 <script lang="ts">
 
+import Products from '@/views/Products.vue'
+
 export default {
+  components: { Products },
   data() {
     return {
       likes: 0,
@@ -27,6 +30,8 @@ export default {
 
     <div>Likes {{ likes }}</div>
     <div>Dislikes {{ dislikes }}</div>
+
+    <Products/>
 
     <RouterView />
   </div>
